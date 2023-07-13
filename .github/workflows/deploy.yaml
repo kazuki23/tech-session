@@ -18,8 +18,8 @@ jobs:
       - name: Build Next.js
         run: npm run build
         
-      - name: List
-        run: ls -la
+      - name: PWD
+        run: pwd
       
       - name: Setup Python
         uses: actions/setup-python@v3
@@ -33,7 +33,7 @@ jobs:
           token: ${{ secrets.LINODE_TOKEN }}
 
       - name: Deploy to Linode Object Store
-        run: linode-cli obj put ./out tech-session/ --cluster ap-south-1
+        run: linode-cli obj put ./out/* tech-session/ --cluster ap-south-1
         env:
           LINODE_CLI_OBJ_ACCESS_KEY: ${{ secrets.LINODE_CLI_OBJ_ACCESS_KEY }}
           LINODE_CLI_OBJ_SECRET_KEY: ${{ secrets.LINODE_CLI_OBJ_SECRET_KEY }}
