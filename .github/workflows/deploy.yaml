@@ -17,6 +17,9 @@ jobs:
 
       - name: Build Next.js
         run: npm run build
+      
+      - name: Setup Python
+        uses: actions/setup-python@v3
 
       - name: Install the Linode CLI
         uses: linode/action-linode-cli@v1
