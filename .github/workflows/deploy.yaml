@@ -26,8 +26,9 @@ jobs:
 
       - name: Install the Linode CLI
         uses: linode/action-linode-cli@v1
-        with:
-          token: ${{ secrets.LINODE_TOKEN }}
 
       - name: Deploy to Linode Object Store
         run: linode-cli obj put ./out tech-session/ --cluster ap-south-1
+        env:
+          LINODE_CLI_OBJ_ACCESS_KEY: ${{ secrets.LINODE_CLI_OBJ_ACCESS_KEY }}
+          LINODE_CLI_OBJ_SECRET_KEY: ${{ secrets.LINODE_CLI_OBJ_SECRET_KEY }}
