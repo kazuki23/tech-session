@@ -26,4 +26,4 @@ jobs:
           secret_key: ${{ secrets.LINODE_CLI_OBJ_SECRET_KEY }}
 
       - name: Deploy to Linode Object Store
-        run: s3cmd sync --recursive --acl-public --delete-removed ./out/* s3://tech-session/
+        run: s3cmd sync --recursive --acl-public --delete-removed --no-mime-magic --delete-after ./out/* s3://tech-session/
