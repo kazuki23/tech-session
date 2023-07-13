@@ -21,7 +21,7 @@ jobs:
       - name: Set up S3cmd cli tool
         uses: s3-actions/s3cmd@v1.5.0
         with:
-          region: "eu-central-1"
+          region: "ap-south-1"
           access_key: ${{ secrets.LINODE_CLI_OBJ_ACCESS_KEY }}
           secret_key: ${{ secrets.LINODE_CLI_OBJ_SECRET_KEY }}
 
